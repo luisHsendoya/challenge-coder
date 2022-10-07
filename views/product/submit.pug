@@ -1,0 +1,26 @@
+extends ../layout/index
+
+
+
+block content 
+
+    div.py-10
+        h1.text-2xl.my-10.font-extrabold.text-center NEW
+            span.font-normal PRODUCT
+
+        div.mt-8.mx-auto.max-w-md.bg-white.py-8.px-4.shadow-xl.rounded-lg
+            form(action="/api/v1/product/submit" method="POST") 
+                div
+                    label.block.text-sm.uppercase.text-stone-600.mb-2.font-bold(for="title")  Nombre
+                    input(type="text", name="title" id="title" class="w-full px-3 py-2 border border-gray-300"  placeholder="example" required=true)
+                div
+                    label.block.text-sm.uppercase.text-stone-600.my-2.font-bold(for="price")  Price
+                    input(type="number", name="price" id="price" class="w-full px-3 py-2 border border-gray-300"  placeholder="$99.9"  required=true)
+                div
+                    label.block.text-sm.uppercase.text-stone-600.my-2.font-bold(for="thumbnail")  URL
+                    input(type="text", name="thumbnail" id="thumbnail" class="w-full px-3 py-2 border border-gray-300" placeholder="https://loremflickr.com" ) 
+
+                input(type="submit", value="Añadir", class="w-full bg-indigo-700 hover:bg-indigo-600 text-white font-bold py-1 cursor-pointer my-4")
+                
+
+
